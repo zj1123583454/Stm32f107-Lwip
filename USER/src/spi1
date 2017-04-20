@@ -1,0 +1,91 @@
+#include "sys.h"
+#include "usb_lib.h"
+#include	"gpiox.h"
+#include "FLASH_OP.h"
+#include "TIMINIT.H"
+#include "delay.h"
+#include "uasrt.h"
+#include "secure.h"
+#include "thm3070.h"
+#include "include.h"
+
+extern volatile unsigned char Voice_value;
+
+volatile	unsigned char	voice_update_fag=0;
+volatile unsigned char 	update_display=0;
+volatile unsigned char	Channel=0;
+
+unsigned char	flash_buf[16];
+unsigned char	buf[170];
+unsigned char	len=0;
+
+int main(void)
+{
+	unsigned 	int m;
+#ifdef DEBUG
+	debug();
+#endif
+	
+	STM32_RCC_Config();		Delay(1000);
+	delay_init(72);				Delay(1000);
+//	Readflash(In_Addr0,16,flash_buf);
+//	Channel=(flash_buf[3]>0x12)?0:flash_buf[3];
+	Delay(1000);
+//	USB_Init();						Delay(1000);
+	GPIO_Config();				Delay(1000);
+	init_i2c();
+	thm3070_Init();
+	USART_Iint();				Delay(10000);
+//	TIM_Init();						Delay(1000);
+	for(m=0;m<500;m++)Delay(100000);
+	while (1)
+	{
+//		if(Command)
+//		{
+//			Command=0;
+//			Uasrt1endData();
+//			Command=0;
+//			len=0;
+//		}
+		if(TX_FRAME)
+		{
+			len= read_sec(buf); 	 			//读加密模块
+			if (len!=0)
+			{	
+				if (buf[0]==0x05)
+				{
+					thm3070_close_RF();				 //关闭射频
+					for (m=0;m<200000;m++);			    
+					thm3070_open_RF();					 //打开射频
+					for (m=0;m<200000;m++);
+				}	  	
+				thm3070_send_buff( buf,len);			 //发送数据	
+//				LED_OFF;	  						//led on
+				len = thm3070_read_buff(buf);			 //接收身份证反馈的信息
+		      buf[len]=0x00; 				 //在数据后补一位0，作为CRC校验信息
+		  		len =len+1;    
+		      write_sec(buf,len);			 //写加密模块
+			}
+		}
+	}
+}
+
+#ifdef  USE_FULL_ASSERT
+
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t* file, uint32_t line)
+{ 
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* Infinite loop */
+  while (1)
+  {
+  }
+}
+#endif

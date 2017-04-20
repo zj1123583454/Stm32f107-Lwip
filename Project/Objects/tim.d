@@ -1,0 +1,10 @@
+.\objects\tim.o: ..\USER\src\TIM.c
+.\objects\tim.o: ..\FWlib\inc\stm32f10x_tim.h
+.\objects\tim.o: ..\CMSIS\stm32f10x.h
+.\objects\tim.o: ..\CMSIS\core_cm3.h
+.\objects\tim.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tim.o: ..\CMSIS\system_stm32f10x.h
+.\objects\tim.o: ..\usb_library\inc\stm32f10x_conf.h
+.\objects\tim.o: ..\USER\inc\stm32f10x_type.h
+.\objects\tim.o: ..\FWlib\inc\misc.h
+.\objects\tim.o: ..\FWlib\inc\stm32f10x_rcc.h

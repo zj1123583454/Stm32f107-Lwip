@@ -1,0 +1,9 @@
+.\objects\gpio.o: ..\USER\src\GPIO.c
+.\objects\gpio.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\objects\gpio.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm3.h
+.\objects\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gpio.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
+.\objects\gpio.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
+.\objects\gpio.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\objects\gpio.o: ..\usb_library\inc\stm32f10x_conf.h
+.\objects\gpio.o: ..\USER\inc\stm32f10x_type.h

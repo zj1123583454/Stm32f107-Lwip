@@ -1,0 +1,9 @@
+.\objects\spi.o: ..\USER\src\SPI.c
+.\objects\spi.o: ..\USER\inc\spi.h
+.\objects\spi.o: ..\USER\inc\sys.h
+.\objects\spi.o: ..\CMSIS\stm32f10x.h
+.\objects\spi.o: ..\CMSIS\core_cm3.h
+.\objects\spi.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\spi.o: ..\CMSIS\system_stm32f10x.h
+.\objects\spi.o: ..\usb_library\inc\stm32f10x_conf.h
+.\objects\spi.o: ..\USER\inc\stm32f10x_type.h

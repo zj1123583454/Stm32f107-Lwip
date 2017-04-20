@@ -1,0 +1,13 @@
+.\objects\lcd.o: ..\Lcd\Lcd.c
+.\objects\lcd.o: ..\Lcd\lcd.h
+.\objects\lcd.o: ..\USER\inc\sys.h
+.\objects\lcd.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h
+.\objects\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm3.h
+.\objects\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
+.\objects\lcd.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
+.\objects\lcd.o: C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h
+.\objects\lcd.o: ..\usb_library\inc\stm32f10x_conf.h
+.\objects\lcd.o: ..\USER\inc\stm32f10x_type.h
+.\objects\lcd.o: ..\USER\inc\FLASH_OP.h
+.\objects\lcd.o: ..\USER\inc\delay.h

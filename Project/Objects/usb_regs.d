@@ -1,0 +1,14 @@
+.\objects\usb_regs.o: ..\usb_library\src\usb_regs.c
+.\objects\usb_regs.o: ..\usb_library\inc\usb_lib.h
+.\objects\usb_regs.o: ..\CMSIS\stm32f10x.h
+.\objects\usb_regs.o: ..\CMSIS\core_cm3.h
+.\objects\usb_regs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usb_regs.o: ..\CMSIS\system_stm32f10x.h
+.\objects\usb_regs.o: ..\usb_library\inc\stm32f10x_conf.h
+.\objects\usb_regs.o: ..\USER\inc\stm32f10x_type.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_regs.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_def.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_core.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_init.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_mem.h
+.\objects\usb_regs.o: ..\usb_library\inc\usb_int.h
