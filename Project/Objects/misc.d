@@ -4,5 +4,12 @@
 .\objects\misc.o: ..\CMSIS\core_cm3.h
 .\objects\misc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\misc.o: ..\CMSIS\system_stm32f10x.h
-.\objects\misc.o: ..\usb_library\inc\stm32f10x_conf.h
-.\objects\misc.o: ..\USER\inc\stm32f10x_type.h
+.\objects\misc.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
+.\objects\misc.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h
+.\objects\misc.o: ..\FWlib\inc\stm32f10x_dma.h
+.\objects\misc.o: ..\CMSIS\stm32f10x.h
+.\objects\misc.o: ..\FWlib\inc\stm32f10x_flash.h
+.\objects\misc.o: ..\FWlib\inc\stm32f10x_gpio.h
+.\objects\misc.o: ..\FWlib\inc\stm32f10x_rcc.h
+.\objects\misc.o: ..\FWlib\inc\stm32f10x_usart.h
+.\objects\misc.o: ..\FWlib\inc\misc.h

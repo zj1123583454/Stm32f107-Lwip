@@ -3,6 +3,13 @@
 .\objects\delay.o: ..\CMSIS\core_cm3.h
 .\objects\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: ..\CMSIS\system_stm32f10x.h
-.\objects\delay.o: ..\usb_library\inc\stm32f10x_conf.h
-.\objects\delay.o: ..\USER\inc\stm32f10x_type.h
+.\objects\delay.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
+.\objects\delay.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h
+.\objects\delay.o: ..\FWlib\inc\stm32f10x_dma.h
+.\objects\delay.o: ..\CMSIS\stm32f10x.h
+.\objects\delay.o: ..\FWlib\inc\stm32f10x_flash.h
+.\objects\delay.o: ..\FWlib\inc\stm32f10x_gpio.h
+.\objects\delay.o: ..\FWlib\inc\stm32f10x_rcc.h
+.\objects\delay.o: ..\FWlib\inc\stm32f10x_usart.h
+.\objects\delay.o: ..\FWlib\inc\misc.h
 .\objects\delay.o: ..\USER\inc\delay.h

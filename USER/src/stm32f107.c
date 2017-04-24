@@ -48,7 +48,6 @@
 /* Private functions ---------------------------------------------------------*/
 void GPIO_Configuration(void);
 void NVIC_Configuration(void);
-void ADC_Configuration(void);
 void Ethernet_Configuration(void);
 
 /**
@@ -73,40 +72,9 @@ void System_Setup(void)
   
 	/* Configure the GPIO ports */
   GPIO_Configuration();
-	
-	//USART_Iint();				
+				
   /* NVIC configuration */
   NVIC_Configuration();  
-
-  /* Initialize the STM3210C-EVAL's LCD */
- // STM3210C_LCD_Init();
-
-  /* Initialize STM3210C-EVAL's LEDs */
-  //STM_EVAL_LEDInit(LED1);
-  //STM_EVAL_LEDInit(LED2);
-  //STM_EVAL_LEDInit(LED3);
-  //STM_EVAL_LEDInit(LED4);
-
-  /* Turn on leds available on STM3210X-EVAL */
-  //TM_EVAL_LEDOn(LED1);
-  //STM_EVAL_LEDOn(LED2);
- // STM_EVAL_LEDOn(LED3);
- // STM_EVAL_LEDOn(LED4);
-
-  /* Clear the LCD */
- // LCD_Clear(Blue);
-
-  /* Set the LCD Back Color */
- // LCD_SetBackColor(Blue);
-
-  /* Set the LCD Text Color */
-  //LCD_SetTextColor(White);
-
-  /* Display message on the LCD*/
-  //LCD_DisplayStringLine(Line0, MESSAGE1);
-  //LCD_DisplayStringLine(Line1, MESSAGE2);
- // LCD_DisplayStringLine(Line2, MESSAGE3);
-  //LCD_DisplayStringLine(Line3, MESSAGE4);
 
   /* Configure the Ethernet peripheral */
   Ethernet_Configuration();
@@ -230,20 +198,17 @@ void GPIO_Configuration(void)
   /* AF Output Push Pull:
   - ETH_MII_MDIO / ETH_RMII_MDIO: PA2
   - ETH_MII_MDC / ETH_RMII_MDC: PC1
-  - ETH_MII_TXD2: PC2
   - ETH_MII_TX_EN / ETH_RMII_TX_EN: PB11
   - ETH_MII_TXD0 / ETH_RMII_TXD0: PB12
   - ETH_MII_TXD1 / ETH_RMII_TXD1: PB13
-  - ETH_MII_PPS_OUT / ETH_RMII_PPS_OUT: PB5
-  - ETH_MII_TXD3: PB8 */
-
+	*/
   /* Configure PA2 as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-  /* Configure PC1, PC2 and PC3 as alternate function push-pull */
+  /* Configure PC1,as alternate function push-pull */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
@@ -259,60 +224,22 @@ void GPIO_Configuration(void)
   /*               For Remapped Ethernet pins                   */
   /*************************************************************/
   /* Input (Reset Value):
-  - ETH_MII_CRS CRS: PA0
   - ETH_MII_RX_CLK / ETH_RMII_REF_CLK: PA1
-  - ETH_MII_COL: PA3
-  - ETH_MII_RX_DV / ETH_RMII_CRS_DV: PD8
-  - ETH_MII_TX_CLK: PC3
+  - ETH_MII_RX_DV / ETH_RMII_CRS_DV: PA7
   - ETH_MII_RXD0 / ETH_RMII_RXD0: PC4
-  - ETH_MII_RXD1 / ETH_RMII_RXD1: PD10
-  - ETH_MII_RXD2: PD11
-  - ETH_MII_RXD3: PD12
-  - ETH_MII_RX_ER: PB10 */
-
-  /* ETHERNET pins remapp in STM3210C-EVAL board: RX_DV and RxD[3:0] */
-  //GPIO_PinRemapConfig(GPIO_Remap_ETH, ENABLE);
-
-  /* Configure PA0, PA1 and PA3 as input */
+  - ETH_MII_RXD1 / ETH_RMII_RXD1: PD5
+	*/
+  /* Configure PA1, PA7 as input */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_7;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-  /* Configure PB10 as input */
-	/*GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOB, &GPIO_InitStructure); */
-
-  /* Configure PC3 as input */
-  /*GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOC, &GPIO_InitStructure); */
-
-  /* Configure PC4 as input */
+  /* Configure PC4 PC5 as input */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
-
-  /* Configure PD8, PD9, PD10, PD11 and PD12 as input */
-/*  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOD, &GPIO_InitStructure); */
-
- /* GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOA, &GPIO_InitStructure); */
-
-  /* Configure PA.06 (ADC Channel6) as analog input -------------------------*/
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);   
 
   /* MCO pin configuration------------------------------------------------- */
   /* Configure MCO (PA8) as alternate function push-pull */
@@ -327,28 +254,6 @@ void GPIO_Configuration(void)
   * @param  None
   * @retval None
   */
-void ADC_Configuration(void)
-{
-  ADC_InitTypeDef ADC_InitStructure;
-
-  /* ADC1 Configuration ------------------------------------------------------*/
-  ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-  ADC_InitStructure.ADC_ScanConvMode = DISABLE;
-  ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-  ADC_InitStructure.ADC_NbrOfChannel = 1;
-  ADC_Init(ADC1, &ADC_InitStructure);
-
-  /* ADC1 regular channel6 configuration */
-  ADC_RegularChannelConfig(ADC1, ADC_Channel_6, 1, ADC_SampleTime_13Cycles5);
-
-  /* Enable ADC1 */
-  ADC_Cmd(ADC1, ENABLE);
-
-  /* Start ADC1 Software Conversion */
-  ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-}
 
 /**
   * @brief  Configures the nested vectored interrupt controller.

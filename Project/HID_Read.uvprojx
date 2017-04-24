@@ -10,6 +10,7 @@
       <TargetName>File</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F107RC</Device>
@@ -440,11 +441,6 @@
               <FilePath>..\lwip-1.3.1\port\client.c</FilePath>
             </File>
             <File>
-              <FileName>helloworld.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\lwip-1.3.1\port\helloworld.c</FilePath>
-            </File>
-            <File>
               <FileName>server.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\lwip-1.3.1\port\server.c</FilePath>
@@ -458,16 +454,6 @@
               <FileName>secure.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\secure\secure.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>3DES</GroupName>
-          <Files>
-            <File>
-              <FileName>3DES.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\3DES\3DES.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -645,41 +631,6 @@
           <GroupName>FWLIB</GroupName>
           <Files>
             <File>
-              <FileName>stm32f10x_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_adc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_bkp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_bkp.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_can.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_cec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_cec.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_crc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_crc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_dac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_dac.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_dbgmcu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_dbgmcu.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f10x_exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FWlib\src\stm32f10x_exti.c</FilePath>
@@ -688,21 +639,6 @@
               <FileName>stm32f10x_i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FWlib\src\stm32f10x_i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_fsmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_fsmc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_iwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_iwdg.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_pwr.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_rtc.c</FileName>
@@ -723,11 +659,6 @@
               <FileName>stm32f10x_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FWlib\src\stm32f10x_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_wwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\FWlib\src\stm32f10x_wwdg.c</FilePath>
             </File>
           </Files>
         </Group>

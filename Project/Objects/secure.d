@@ -3,8 +3,14 @@
 .\objects\secure.o: ..\CMSIS\core_cm3.h
 .\objects\secure.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\secure.o: ..\CMSIS\system_stm32f10x.h
-.\objects\secure.o: ..\usb_library\inc\stm32f10x_conf.h
-.\objects\secure.o: ..\USER\inc\stm32f10x_type.h
+.\objects\secure.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
+.\objects\secure.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h
+.\objects\secure.o: ..\FWlib\inc\stm32f10x_dma.h
+.\objects\secure.o: ..\CMSIS\stm32f10x.h
+.\objects\secure.o: ..\FWlib\inc\stm32f10x_flash.h
+.\objects\secure.o: ..\FWlib\inc\stm32f10x_gpio.h
+.\objects\secure.o: ..\FWlib\inc\stm32f10x_rcc.h
+.\objects\secure.o: ..\FWlib\inc\stm32f10x_usart.h
+.\objects\secure.o: ..\FWlib\inc\misc.h
 .\objects\secure.o: ..\secure\secure.h
 .\objects\secure.o: ..\USER\inc\delay.h
-.\objects\secure.o: ..\FWlib\inc\stm32f10x_gpio.h
