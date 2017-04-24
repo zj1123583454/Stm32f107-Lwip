@@ -32,7 +32,7 @@
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\tcpclient.o: ..\FWlib\inc\misc.h
+.\objects\tcpclient.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\tcpclient.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\tcpclient.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\tcpclient.o: ..\USER\inc\netconf.h

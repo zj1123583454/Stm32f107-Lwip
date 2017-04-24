@@ -11,4 +11,4 @@
 .\objects\gpiox.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\gpiox.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\gpiox.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\gpiox.o: ..\FWlib\inc\misc.h
+.\objects\gpiox.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h

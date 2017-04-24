@@ -11,6 +11,6 @@
 .\objects\secure.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\secure.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\secure.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\secure.o: ..\FWlib\inc\misc.h
+.\objects\secure.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\secure.o: ..\secure\secure.h
 .\objects\secure.o: ..\USER\inc\delay.h

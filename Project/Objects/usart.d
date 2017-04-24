@@ -13,7 +13,7 @@
 .\objects\usart.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\usart.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\usart.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\usart.o: ..\FWlib\inc\misc.h
+.\objects\usart.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\usart.o: ..\USER\inc\stm32f107.h
 .\objects\usart.o: ..\FWlib\inc\stm32f10x_adc.h
 .\objects\usart.o: ..\FWlib\inc\stm32f10x_exti.h

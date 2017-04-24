@@ -13,7 +13,7 @@
 .\objects\main.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\main.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\main.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\main.o: ..\FWlib\inc\misc.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\main.o: ..\USER\inc\gpiox.h
 .\objects\main.o: ..\USER\inc\TIMINIT.H
 .\objects\main.o: ..\USER\inc\delay.h

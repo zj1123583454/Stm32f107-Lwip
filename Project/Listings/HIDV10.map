@@ -2598,7 +2598,7 @@ Image component sizes
        256         66          0         12        600       2665   main.o
       1032         72          0         13      20500       4705   mem.o
        204         30         36          0      18095       3498   memp.o
-       152         30          0          0          0       2193   misc.o
+       152         30          0          0          0       2253   misc.o
        136         32          0          0         48       3327   netconf.o
        356         24          0          9          0       6671   netif.o
       1514          0          0          0          0       7485   pbuf.o
@@ -2608,7 +2608,7 @@ Image component sizes
       1660        138          0         16          0      13878   stm32_eth.o
        670         42          0          0          0      19095   stm32f107.o
        290          6          0          0          0       2600   stm32f10x_gpio.o
-       120         20          0          1          0     305718   stm32f10x_it.o
+       120         20          0          1          0     305794   stm32f10x_it.o
        604         66          0         20          0       8292   stm32f10x_rcc.o
         34          0          0          0          0       2683   stm32f10x_usart.o
          0          0          0          0          0         32   sys.o
@@ -2621,7 +2621,7 @@ Image component sizes
         42          4          0          4          0       2778   usart.o
 
     ----------------------------------------------------------------------
-     25064       1264        416        212      51920     492983   Object Totals
+     25064       1264        416        212      51920     493119   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         34          0          0         16          1          0   (incl. Padding)
 
@@ -2683,8 +2683,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     26132       1290        416        212      52020     484787   Grand Totals
-     26132       1290        416        212      52020     484787   ELF Image Totals
+     26132       1290        416        212      52020     484923   Grand Totals
+     26132       1290        416        212      52020     484923   ELF Image Totals
      26132       1290        416        212          0          0   ROM Totals
 
 ==============================================================================

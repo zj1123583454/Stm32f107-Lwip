@@ -1,5 +1,5 @@
 .\objects\misc.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\src\misc.c
-.\objects\misc.o: ..\FWlib\inc\misc.h
+.\objects\misc.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\misc.o: ..\CMSIS\stm32f10x.h
 .\objects\misc.o: ..\CMSIS\core_cm3.h
 .\objects\misc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -12,4 +12,4 @@
 .\objects\misc.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\misc.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\misc.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\misc.o: ..\FWlib\inc\misc.h
+.\objects\misc.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h

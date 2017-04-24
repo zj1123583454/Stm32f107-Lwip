@@ -12,7 +12,7 @@
 .\objects\server.o: ..\FWlib\inc\stm32f10x_gpio.h
 .\objects\server.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\server.o: ..\FWlib\inc\stm32f10x_usart.h
-.\objects\server.o: ..\FWlib\inc\misc.h
+.\objects\server.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\StdPeriph_Driver\inc\misc.h
 .\objects\server.o: ..\USER\inc\stm32f107.h
 .\objects\server.o: ..\FWlib\inc\stm32f10x_adc.h
 .\objects\server.o: ..\FWlib\inc\stm32f10x_exti.h
