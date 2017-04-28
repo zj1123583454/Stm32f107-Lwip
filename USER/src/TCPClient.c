@@ -25,7 +25,7 @@
 #include "stm32f107.h"
 #include "secure.h"
 #include <string.h>
-#define Date_Len	200
+#define Date_Len	100
 uint8_t TCP_ClientFlag=85;               //TCP 状态标志位    断开 或连接
 uint8_t RX_buffer[Date_Len]={0};
 uint8_t RX_Flag=0;
@@ -65,7 +65,7 @@ struct tcp_pcb *tcp_echoclient_connect(void)
 			if (echoclient_pcb != NULL)
 			{
 				IP4_ADDR( &DestIPaddr, 192, 168, 1,1 );
-//				IP4_ADDR( &DestIPaddr, 172, 16, 0,107 );                debug
+				//IP4_ADDR( &DestIPaddr, 172, 16, 0,107 );            
        
     /* connect to destination address/port */
 				tcp_connect(echoclient_pcb,&DestIPaddr,8080,tcp_echoclient_connected);
@@ -184,24 +184,26 @@ err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t
     ret_err = err;
   }
   else if(es->state == ES_CONNECTED)
-  { 
+  {
+		tcp_recved(tpcb, p->tot_len); 		
 		memcpy(RX_buffer,p->payload,p->len);//add 3 23
-		if(RX_buffer[0]==0x55)
-		{
-			RX_Flag=1;
-			TCP_ClientFlag=170;
-		}
-		else if(strcmp((const char *)RX_buffer,"Lunry_AskSocketType")==0)
+		if(strcmp((const char *)RX_buffer,"Lunry_AskSocketType")==0)
 		{
 			tcp_write(tpcb,"Lunry_SocketType_SAM",20,1);
 			tcp_output(tpcb);
 			TCP_ClientFlag=170;
+		}
+		else if(TCP_ClientFlag==170 && RX_buffer[0]==0x55)
+		{
+			RX_Flag=1;
 		} 		
-		else 
-		TCP_ClientFlag=0;
-    tcp_recved(tpcb, p->tot_len); 
-    pbuf_free(p);	
-    //tcp_echoclient_connection_close(tpcb, es);
+		else
+		{
+			memset(RX_buffer,0,Date_Len);
+			TCP_ClientFlag=0;
+		}
+		pbuf_free(p);	
+   //tcp_echoclient_connection_close(tpcb, es);
     ret_err = ERR_OK;
   }
 

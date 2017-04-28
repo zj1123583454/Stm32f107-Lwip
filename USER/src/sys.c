@@ -9,7 +9,10 @@ __asm void WFI_SET(void)
 {
 	WFI;    
 }
-
+__asm void wait()
+{
+      BX lr
+}
 //进入待机模式	 
 //check ok 
 //091202

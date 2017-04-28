@@ -17,7 +17,7 @@
 #include "stm32f107.h"
 
 #define SYSTEMTICK_PERIOD_MS  10
-#define Date_Len	200
+#define Date_Len	100
 
 __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 void System_Periodic_Handle(void);
@@ -26,9 +26,9 @@ extern uint8_t TCP_ClientFlag;
 extern uint8_t RX_Flag;
 extern uint8_t RX_buffer[Date_Len];
 
-uint8_t buf_1[Date_Len]={0};
-uint8_t buf[Date_Len]={0};
-uint8_t buf_2[Date_Len]={0};
+uint8_t  buf_1[Date_Len]={0};
+uint8_t  buf[Date_Len]={0};
+uint8_t  buf_2[Date_Len]={0};
 uint8_t leng=0,leng_1=0;
 uint8_t leng_2=0;
 uint8_t IT_Begin=0;
@@ -43,10 +43,9 @@ int main(void)
 	System_Setup();       
 	LwIP_Init();													 			//LWIP 初始化  配置IP等
 	GPIO_Config();															//配置IIC
-	init_i2c();
-	Delay(90000);                               //
-	IT_Begin=22;                                //所有初始化就绪标志 此标志使能 定时检测TCP是否断开
+	init_i2c();                              
 	Tcp_write=tcp_echoclient_connect();					//创建TCP通道 并且连接到服务器
+	IT_Begin=22;                                //所有初始化就绪标志 此标志使能 定时检测TCP是否断开
 	while(1)
 	{	
 					if(TX_FRAME)																				 //如果安全模块读取使能

@@ -149,7 +149,7 @@ void Ethernet_Configuration(void)
 	//--------------以下 4行代码优化于17年4月7日 用于提高以太网的传输效率
 	ETH_InitStructure.ETH_Mode = ETH_Mode_FullDuplex;
 	ETH_InitStructure.ETH_InterFrameGap = ETH_InterFrameGap_40Bit;     
-	ETH_InitStructure.ETH_Watchdog = ETH_Watchdog_Disable; 
+	ETH_InitStructure.ETH_Watchdog = ETH_Watchdog_Enable; 
   ETH_InitStructure.ETH_Jabber = ETH_Jabber_Disable; 
 #ifdef CHECKSUM_BY_HARDWARE
   ETH_InitStructure.ETH_ChecksumOffload = ETH_ChecksumOffload_Enable;
@@ -170,7 +170,7 @@ void Ethernet_Configuration(void)
   ETH_InitStructure.ETH_FixedBurst = ETH_FixedBurst_Enable;                
   ETH_InitStructure.ETH_RxDMABurstLength = ETH_RxDMABurstLength_32Beat;          
   ETH_InitStructure.ETH_TxDMABurstLength = ETH_TxDMABurstLength_32Beat;                                                                 
-  ETH_InitStructure.ETH_DMAArbitration = ETH_DMAArbitration_RoundRobin_RxTx_2_1;
+  ETH_InitStructure.ETH_DMAArbitration = ETH_DMAArbitration_RoundRobin_RxTx_1_1;
 	//-----------------------------------------------------------------------------------------
 	
 //----------------------------------------------------------------------------------------

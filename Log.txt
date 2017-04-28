@@ -6,6 +6,7 @@ Stm32F107-TCP-Client:
 	  3.加入TCP连接标志位，每400毫秒检测一次（针对lunry的server端），保证TCP能够连接成功,支持断开重连。
 	  4.优化ETH的配置禁用以太网看门狗，Jabber，以太网发送帧帧间隙改为40bit
 	  5.修复2个可能数组越界的BUG
+	  6.2017年4月28日 修复大量数据传输造成 HardFault_Handler的错误，
 
 
 以太网配置
