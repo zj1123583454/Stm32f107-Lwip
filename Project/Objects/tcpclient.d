@@ -24,8 +24,8 @@
 .\objects\tcpclient.o: ..\CMSIS\core_cm3.h
 .\objects\tcpclient.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\tcpclient.o: ..\CMSIS\system_stm32f10x.h
-.\objects\tcpclient.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
-.\objects\tcpclient.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h
+.\objects\tcpclient.o: C:\Users\Administrator\Downloads\Stm32f107-Lwip-master\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
+.\objects\tcpclient.o: C:\Users\Administrator\Downloads\Stm32f107-Lwip-master\Project\RTE\RTE_Components.h
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_dma.h
 .\objects\tcpclient.o: ..\CMSIS\stm32f10x.h
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_flash.h

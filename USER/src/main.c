@@ -22,24 +22,23 @@
 __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 void System_Periodic_Handle(void);
 
-extern uint8_t TCP_ClientFlag;
-extern uint8_t RX_Flag;
-extern uint8_t RX_buffer[Date_Len];
+//extern uint8_t TCP_ClientFlag;
+//extern uint8_t RX_Flag;
+//extern uint8_t RX_buffer[Date_Len];
 
 uint8_t  buf_1[Date_Len]={0};
 uint8_t  buf[Date_Len]={0};
-uint8_t  buf_2[Date_Len]={0};
 uint8_t leng=0,leng_1=0;
-uint8_t leng_2=0;
+//uint8_t leng_2=0;
 uint8_t IT_Begin=0;
 
 struct tcp_pcb *Tcp_write=NULL;
 
 int main(void)
 {
-#ifdef DEBUG
-	debug();
-#endif
+//#ifdef DEBUG
+//	debug();
+//#endif
 	System_Setup();       
 	LwIP_Init();													 			//LWIP 初始化  配置IP等
 	GPIO_Config();															//配置IIC
@@ -56,15 +55,15 @@ int main(void)
 						tcp_output(Tcp_write);			
 					}				
 					tcp_recv(Tcp_write,tcp_echoclient_recv);               //接收Socket的数据
-					if(RX_Flag)
-					{
-						//memset(buf_2,0,Date_Len);
-						leng_2=DataUnPackage(buf_2,RX_buffer);               
-						buf_2[leng_2] = 0x00;																 //	增加CRC校验位
-						leng_2 += 1;
-						write_sec(buf_2,leng_2);
-						RX_Flag=0;
-					}
+//					if(RX_Flag)
+//					{
+//						//memset(buf_2,0,Date_Len);
+//						leng_2=DataUnPackage(buf_2,RX_buffer);               
+//						buf_2[leng_2] = 0x00;																 //	增加CRC校验位
+//						leng_2 += 1;
+//						write_sec(buf_2,leng_2);
+//						RX_Flag=0;
+//					} 
  }
 }
 //------------------------------------------------------------------------------------

@@ -26,8 +26,10 @@
 #include "secure.h"
 #include <string.h>
 #define Date_Len	100
-uint8_t TCP_ClientFlag=85;               //TCP 状态标志位    断开 或连接
+uint8_t TCP_ClientFlag=TCP_Closed;               //TCP 状态标志位    断开 或连接
+uint8_t  buf_2[Date_Len]={0};
 uint8_t RX_buffer[Date_Len]={0};
+uint8_t Full_Len=0;
 uint8_t RX_Flag=0;
 #if LWIP_TCP
 /* Private typedef -----------------------------------------------------------*/
@@ -64,7 +66,7 @@ struct tcp_pcb *tcp_echoclient_connect(void)
        
 			if (echoclient_pcb != NULL)
 			{
-				IP4_ADDR( &DestIPaddr, 192, 168, 1,1 );
+				IP4_ADDR( &DestIPaddr, 192, 168, 1,107);
 				//IP4_ADDR( &DestIPaddr, 172, 16, 0,107 );            
        
     /* connect to destination address/port */
@@ -148,6 +150,7 @@ static err_t tcp_echoclient_connected(void *arg, struct tcp_pcb *tpcb, err_t err
   */
 err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 { 
+	uint8_t head[1]={0x55};
   struct echoclient *es;
   err_t ret_err;
   
@@ -184,24 +187,37 @@ err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t
     ret_err = err;
   }
   else if(es->state == ES_CONNECTED)
-  {
-		tcp_recved(tpcb, p->tot_len); 		
-		memcpy(RX_buffer,p->payload,p->len);//add 3 23
-		if(strcmp((const char *)RX_buffer,"Lunry_AskSocketType")==0)
+  {	
+		TCP_ClientFlag=TCP_Connected;
+		if(memcmp(p->payload,"Lunry_AskSocketType",19)==0)
 		{
 			tcp_write(tpcb,"Lunry_SocketType_SAM",20,1);
 			tcp_output(tpcb);
-			TCP_ClientFlag=170;
 		}
-		else if(TCP_ClientFlag==170 && RX_buffer[0]==0x55)
+		else if(memcmp((const char *)p->payload,head,1)==0)
 		{
-			RX_Flag=1;
-		} 		
-		else
-		{
-			memset(RX_buffer,0,Date_Len);
-			TCP_ClientFlag=0;
+			//memcpy(RX_buffer,p->payload,p->len);//add 3 23
+				Full_Len=DataUnPackage(buf_2,p->payload);               
+				buf_2[Full_Len] = 0x00;																 //	增加CRC校验位
+				Full_Len += 1;
+				write_sec(buf_2,Full_Len);
+//				RX_Flag=0;
 		}
+//		if(strcmp((const char *)RX_buffer,"Lunry_AskSocketType")==0)
+//		{
+//			tcp_write(tpcb,"Lunry_SocketType_SAM",20,1);
+//			tcp_output(tpcb);
+//			TCP_ClientFlag=TCP_Connected;
+//		}
+//		else if(RX_buffer[0]==0x55)
+//		{
+//			RX_Flag=1;
+//		}
+		else 
+		{
+			tcp_echoclient_connection_close(tpcb, es);
+		}
+		tcp_recved(tpcb, p->tot_len);
 		pbuf_free(p);	
    //tcp_echoclient_connection_close(tpcb, es);
     ret_err = ERR_OK;
@@ -353,7 +369,7 @@ void tcp_echoclient_connection_close(struct tcp_pcb *tpcb, struct echoclient * e
 
   /* close tcp connection */
   tcp_close(tpcb);
-  TCP_ClientFlag=85;                 //标记TCP断开
+  TCP_ClientFlag=TCP_Closed;                 //标记TCP断开
 }
 
 #endif /* LWIP_TCP */

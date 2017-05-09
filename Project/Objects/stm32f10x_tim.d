@@ -4,8 +4,8 @@
 .\objects\stm32f10x_tim.o: ..\CMSIS\core_cm3.h
 .\objects\stm32f10x_tim.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\stm32f10x_tim.o: ..\CMSIS\system_stm32f10x.h
-.\objects\stm32f10x_tim.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
-.\objects\stm32f10x_tim.o: D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h
+.\objects\stm32f10x_tim.o: C:\Users\Administrator\Downloads\Stm32f107-Lwip-master\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h
+.\objects\stm32f10x_tim.o: C:\Users\Administrator\Downloads\Stm32f107-Lwip-master\Project\RTE\RTE_Components.h
 .\objects\stm32f10x_tim.o: ..\FWlib\inc\stm32f10x_dma.h
 .\objects\stm32f10x_tim.o: ..\CMSIS\stm32f10x.h
 .\objects\stm32f10x_tim.o: ..\FWlib\inc\stm32f10x_flash.h

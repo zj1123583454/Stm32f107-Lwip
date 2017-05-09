@@ -18,6 +18,11 @@ enum echoclient_states
   ES_RECEIVED,
   ES_CLOSING,
 };
+enum Lunry_Tcp_States
+{
+	TCP_Closed=0,
+	TCP_Connected,
+};
 
 struct echoclient
 {

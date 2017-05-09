@@ -36,9 +36,12 @@ void NMIHbitandler(void)
 void HardFaultHbitandler(void)
 {
 	/* Go to infinite loop when Hard Fault exception occurs */
+	  if (CoreDebug->DHCSR & 1) {  //check C_DEBUGEN == 1 -> Debugger Connected  
+      __breakpoint(0);  // halt program execution here         
+  }  
 	while (1)
 	{
-		wait();
+		;
 	}
 }
 
@@ -121,12 +124,11 @@ void SysTick_Handler(void)
   /* Update the LocalTime by adding SYSTEMTICK_PERIOD_MS each SysTick interrupt */
   Time_Update();
 	ConnectTime+=1;
-	if(IT_Begin==22 && ConnectTime>=40)
+	if(IT_Begin==22 && ConnectTime>=100)
 	{
-			if(TCP_ClientFlag!=170)
+			if(TCP_ClientFlag!=TCP_Connected)
 			{
-				tcp_echoclient_connection_close(Tcp_write,memtoryES);
-				Tcp_write=tcp_echoclient_connect();
+					Tcp_write=tcp_echoclient_connect();
 			}
 			ConnectTime=0;
 	}		

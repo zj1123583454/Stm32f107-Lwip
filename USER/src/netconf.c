@@ -73,7 +73,7 @@ void LwIP_Init(void)
   struct ip_addr ipaddr;
   struct ip_addr netmask;
   struct ip_addr gw;
-  uint8_t macaddress[6]={0,0,0,0,0,2};
+  uint8_t macaddress[6]={0,0,0,0,0,7};
 
   /* Initializes the dynamic memory heap defined by MEM_SIZE.*/
   mem_init();
@@ -117,7 +117,7 @@ void LwIP_Init(void)
 	printf("Client selected\n\r");
 }
 #else
-  IP4_ADDR(&ipaddr, 192,168,1,2);
+  IP4_ADDR(&ipaddr, 192,168,1,7);
   IP4_ADDR(&netmask, 255, 255, 255, 0);
   IP4_ADDR(&gw, 192,168,1,1);
 //  IP4_ADDR(&ipaddr, 172,16,0,99);
