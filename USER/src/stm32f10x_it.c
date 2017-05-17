@@ -124,7 +124,7 @@ void SysTick_Handler(void)
   /* Update the LocalTime by adding SYSTEMTICK_PERIOD_MS each SysTick interrupt */
   Time_Update();
 	ConnectTime+=1;
-	if(IT_Begin==22 && ConnectTime>=100)
+	if(IT_Begin==BEGIN && ConnectTime>=100)                              
 	{
 			if(TCP_ClientFlag!=TCP_Connected)
 			{

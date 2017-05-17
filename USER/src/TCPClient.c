@@ -27,10 +27,6 @@
 #include <string.h>
 #define Date_Len	100
 uint8_t TCP_ClientFlag=TCP_Closed;               //TCP 状态标志位    断开 或连接
-uint8_t  buf_2[Date_Len]={0};
-uint8_t RX_buffer[Date_Len]={0};
-uint8_t Full_Len=0;
-uint8_t RX_Flag=0;
 #if LWIP_TCP
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -66,8 +62,8 @@ struct tcp_pcb *tcp_echoclient_connect(void)
        
 			if (echoclient_pcb != NULL)
 			{
-				IP4_ADDR( &DestIPaddr, 192, 168, 1,107);
-				//IP4_ADDR( &DestIPaddr, 172, 16, 0,107 );            
+				IP4_ADDR( &DestIPaddr, 192, 168, 1,1);
+//				IP4_ADDR( &DestIPaddr, 172, 16, 0,120 );            
        
     /* connect to destination address/port */
 				tcp_connect(echoclient_pcb,&DestIPaddr,8080,tcp_echoclient_connected);
@@ -151,6 +147,9 @@ static err_t tcp_echoclient_connected(void *arg, struct tcp_pcb *tpcb, err_t err
 err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 { 
 	uint8_t head[1]={0x55};
+	uint8_t leng=0;
+	uint8_t buf[Date_Len];
+	
   struct echoclient *es;
   err_t ret_err;
   
@@ -196,23 +195,11 @@ err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t
 		}
 		else if(memcmp((const char *)p->payload,head,1)==0)
 		{
-			//memcpy(RX_buffer,p->payload,p->len);//add 3 23
-				Full_Len=DataUnPackage(buf_2,p->payload);               
-				buf_2[Full_Len] = 0x00;																 //	增加CRC校验位
-				Full_Len += 1;
-				write_sec(buf_2,Full_Len);
-//				RX_Flag=0;
+			leng=DataUnPackage(buf,p->payload);               
+			buf[leng] = 0x00;																 //	增加CRC校验位
+			leng += 1;
+			write_sec(buf,leng);
 		}
-//		if(strcmp((const char *)RX_buffer,"Lunry_AskSocketType")==0)
-//		{
-//			tcp_write(tpcb,"Lunry_SocketType_SAM",20,1);
-//			tcp_output(tpcb);
-//			TCP_ClientFlag=TCP_Connected;
-//		}
-//		else if(RX_buffer[0]==0x55)
-//		{
-//			RX_Flag=1;
-//		}
 		else 
 		{
 			tcp_echoclient_connection_close(tpcb, es);

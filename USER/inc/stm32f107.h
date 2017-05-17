@@ -27,7 +27,7 @@
  extern "C" {
 #endif
 
-
+#define BEGIN				22
 /* Includes ------------------------------------------------------------------*/
 #include "misc.h"
 #include "stm32f10x_adc.h"
@@ -38,6 +38,7 @@
 
 
 void System_Setup(void);
+void Iwdg_Init(void);
 unsigned char checksum(unsigned short	int	LenG,unsigned char *ap);
 int DataUnPackage(unsigned char* Dst,unsigned char* Src);
 int DataPackage(unsigned char* Dst,unsigned char* Src,int SrcLength);

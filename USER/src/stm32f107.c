@@ -24,6 +24,7 @@
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_adc.h"
+#include "stm32f10x_iwdg.h"
 #include "stm32f10x.h"
 #include "main.h"
 #include "usart.h"
@@ -149,7 +150,7 @@ void Ethernet_Configuration(void)
 	//--------------以下 4行代码优化于17年4月7日 用于提高以太网的传输效率
 	ETH_InitStructure.ETH_Mode = ETH_Mode_FullDuplex;
 	ETH_InitStructure.ETH_InterFrameGap = ETH_InterFrameGap_40Bit;     
-	ETH_InitStructure.ETH_Watchdog = ETH_Watchdog_Enable; 
+	ETH_InitStructure.ETH_Watchdog = ETH_Watchdog_Disable; 
   ETH_InitStructure.ETH_Jabber = ETH_Jabber_Disable; 
 #ifdef CHECKSUM_BY_HARDWARE
   ETH_InitStructure.ETH_ChecksumOffload = ETH_ChecksumOffload_Enable;
@@ -277,6 +278,14 @@ void NVIC_Configuration(void)
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);    
   
+}
+void Iwdg_Init(void)
+{
+	IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);         //写入看门狗的地址
+	IWDG_SetPrescaler(IWDG_Prescaler_64);									//设置预分频器为64分频
+	IWDG_SetReload(0xAAAA);																//写入看门狗重装载值
+	IWDG_ReloadCounter();																	//装载计数器
+	IWDG_Enable();																				//启动看门狗
 }
 unsigned char checksum(unsigned short	int	LenG,unsigned char *ap)
 {
