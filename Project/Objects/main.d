@@ -52,3 +52,4 @@
 .\objects\main.o: ..\lwip-1.3.1\src\include\lwip/memp.h
 .\objects\main.o: ..\lwip-1.3.1\src\include\lwip/memp_std.h
 .\objects\main.o: ..\USER\inc\netconf.h
+.\objects\main.o: ..\FWlib\inc\stm32f10x_iwdg.h

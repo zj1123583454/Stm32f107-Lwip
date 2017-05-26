@@ -27,6 +27,8 @@
 #include <string.h>
 #define Date_Len	100
 uint8_t TCP_ClientFlag=TCP_Closed;               //TCP 状态标志位    断开 或连接
+uint8_t TCP_ReciveBuffer[Date_Len];
+uint8_t RX_Flag=0;
 #if LWIP_TCP
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -146,9 +148,7 @@ static err_t tcp_echoclient_connected(void *arg, struct tcp_pcb *tpcb, err_t err
   */
 err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err)
 { 
-	uint8_t head[1]={0x55};
-	uint8_t leng=0;
-	uint8_t buf[Date_Len];
+	uint8_t head[1]={0x55};                
 	
   struct echoclient *es;
   err_t ret_err;
@@ -188,17 +188,19 @@ err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t
   else if(es->state == ES_CONNECTED)
   {	
 		TCP_ClientFlag=TCP_Connected;
-		if(memcmp(p->payload,"Lunry_AskSocketType",19)==0)
+		if(memcmp((const char *)p->payload,head,1)==0)
+		{
+				RX_Flag=1;
+				memcpy(TCP_ReciveBuffer,p->payload,p->tot_len);
+//			leng=DataUnPackage(buf,p->payload);               
+//			buf[leng] = 0x00;																 //	增加CRC校验位
+//			leng += 1;
+//			write_sec(buf,leng);
+		}
+		else if(memcmp(p->payload,"Lunry_AskSocketType",19)==0)
 		{
 			tcp_write(tpcb,"Lunry_SocketType_SAM",20,1);
 			tcp_output(tpcb);
-		}
-		else if(memcmp((const char *)p->payload,head,1)==0)
-		{
-			leng=DataUnPackage(buf,p->payload);               
-			buf[leng] = 0x00;																 //	增加CRC校验位
-			leng += 1;
-			write_sec(buf,leng);
 		}
 		else 
 		{

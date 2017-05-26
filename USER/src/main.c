@@ -15,13 +15,15 @@
 #include "lwip/tcp.h"
 #include "TCPClient.h"
 #include "stm32f107.h"
+#include "stm32f10x_iwdg.h"
 
-#define SYSTEMTICK_PERIOD_MS  10
+#define SYSTEMTICK_PERIOD_MS  10                //系统滴答时钟中断时间10ms
 #define Date_Len	100
 
 __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 void System_Periodic_Handle(void);
-
+extern uint8_t RX_Flag;
+extern uint8_t TCP_ReciveBuffer[Date_Len];
 uint8_t buf_1[Date_Len]={0};
 uint8_t buf[Date_Len]={0};
 uint8_t leng=0,leng_1=0;
@@ -35,7 +37,8 @@ int main(void)
 	GPIO_Config();															//配置IIC
 	init_i2c();                              
 	Tcp_write=tcp_echoclient_connect();					//创建TCP通道 并且连接到服务器
-	IT_Begin=BEGIN;                                //所有初始化就绪标志 此标志使能 定时检测TCP是否断开
+	IT_Begin=BEGIN;															//所有初始化就绪标志 此标志使能 定时检测TCP是否断开
+	//Iwdg_Init();																//初始化 独立看门狗	
 	while(1)
 	{	
 		
@@ -47,6 +50,15 @@ int main(void)
 						tcp_output(Tcp_write);			
 					}				
 					tcp_recv(Tcp_write,tcp_echoclient_recv);               //接收Socket的数据
+					//IWDG_ReloadCounter();																		//喂狗
+					if(RX_Flag)
+					{
+						leng=DataUnPackage(buf,TCP_ReciveBuffer);               
+						buf[leng] = 0x00;																 //	增加CRC校验位
+						leng += 1;
+						write_sec(buf,leng);
+						RX_Flag=0;
+					}
  }
 }
 //------------------------------------------------------------------------------------

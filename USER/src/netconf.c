@@ -73,7 +73,7 @@ void LwIP_Init(void)
   struct ip_addr ipaddr;
   struct ip_addr netmask;
   struct ip_addr gw;
-  uint8_t macaddress[6]={0,0,0,0,0,99};
+  uint8_t macaddress[6]={0,0,0,0,0,2};
 
   /* Initializes the dynamic memory heap defined by MEM_SIZE.*/
   mem_init();
