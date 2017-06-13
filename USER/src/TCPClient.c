@@ -25,6 +25,7 @@
 #include "stm32f107.h"
 #include "secure.h"
 #include <string.h>
+#include "stm32f10x_iwdg.h"
 #define Date_Len	100
 uint8_t TCP_ClientFlag=TCP_Closed;               //TCP 状态标志位    断开 或连接
 uint8_t TCP_ReciveBuffer[Date_Len];
@@ -65,7 +66,7 @@ struct tcp_pcb *tcp_echoclient_connect(void)
 			if (echoclient_pcb != NULL)
 			{
 				IP4_ADDR( &DestIPaddr, 192, 168, 1,1);
-//				IP4_ADDR( &DestIPaddr, 172, 16, 0,120 );            
+//				IP4_ADDR( &DestIPaddr, 172, 16, 0,127 );            
        
     /* connect to destination address/port */
 				tcp_connect(echoclient_pcb,&DestIPaddr,8080,tcp_echoclient_connected);
@@ -192,10 +193,13 @@ err_t tcp_echoclient_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t
 		{
 				RX_Flag=1;
 				memcpy(TCP_ReciveBuffer,p->payload,p->tot_len);
-//			leng=DataUnPackage(buf,p->payload);               
-//			buf[leng] = 0x00;																 //	增加CRC校验位
-//			leng += 1;
-//			write_sec(buf,leng);
+				
+		}
+		else if(memcmp(p->payload,"Lunry_HeartCmd",14)==0)
+		{
+			tcp_write(tpcb,"Lunry_HeartCmd_Ok",17,1);
+			tcp_output(tpcb);
+			IWDG_ReloadCounter();																		//喂狗
 		}
 		else if(memcmp(p->payload,"Lunry_AskSocketType",19)==0)
 		{

@@ -1,5 +1,5 @@
 Dependencies for Project 'HID_Read', Target 'File': (DO NOT MODIFY !)
-F (..\USER\src\stm32f10x_it.c)(0x591BFBAE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
+F (..\USER\src\stm32f10x_it.c)(0x593E39CC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (..\CMSIS\stm32f10x.h)(0x5901E984)
 I (..\CMSIS\core_cm3.h)(0x5901E984)
@@ -25,7 +25,7 @@ I (..\FWlib\inc\stm32f10x_adc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_spi.h)(0x5901E984)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (..\USER\inc\netconf.h)(0x5901E984)
-I (..\USER\inc\TCPClient.h)(0x59111CED)
+I (..\USER\inc\TCPClient.h)(0x593E464B)
 I (..\lwip-1.3.1\src\include\lwip/debug.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/arch.h)(0x5901E984)
 I (..\lwip-1.3.1\port\arch/cc.h)(0x5901E984)
@@ -46,8 +46,24 @@ I (..\lwip-1.3.1\src\include\ipv4\lwip/ip_addr.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\ipv4\lwip/inet.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/netif.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\ipv4\lwip/icmp.h)(0x5901E984)
-F (..\USER\src\UASRT.c)(0x5901E984)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\uasrt.o --omf_browse .\objects\uasrt.crf --depend .\objects\uasrt.d)
-F (..\USER\src\GPIOx.c)(0x5901E984)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\gpiox.o --omf_browse .\objects\gpiox.crf --depend .\objects\gpiox.d)
+F (..\USER\src\UASRT.c)(0x593E33AE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\uasrt.o --omf_browse .\objects\uasrt.crf --depend .\objects\uasrt.d)
+I (..\FWlib\inc\stm32f10x_usart.h)(0x5901E984)
+I (..\CMSIS\stm32f10x.h)(0x5901E984)
+I (..\CMSIS\core_cm3.h)(0x5901E984)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
+I (..\CMSIS\system_stm32f10x.h)(0x5901E984)
+I (D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC\stm32f10x_conf.h)(0x5901E984)
+I (D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\RTE_Components.h)(0x5910208E)
+I (..\FWlib\inc\stm32f10x_dma.h)(0x5901E984)
+I (..\FWlib\inc\stm32f10x_flash.h)(0x5901E984)
+I (..\FWlib\inc\stm32f10x_gpio.h)(0x5901E984)
+I (..\FWlib\inc\stm32f10x_rcc.h)(0x5901E984)
+I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
+I (..\USER\inc\uasrt.h)(0x5901E984)
+I (..\USER\inc\include.h)(0x5901E984)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
+I (..\USER\inc\usart.h)(0x593E337A)
+F (..\USER\src\GPIOx.c)(0x593E33AE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\gpiox.o --omf_browse .\objects\gpiox.crf --depend .\objects\gpiox.d)
 I (..\CMSIS\stm32f10x.h)(0x5901E984)
 I (..\CMSIS\core_cm3.h)(0x5901E984)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DEA3A)
@@ -74,7 +90,7 @@ I (..\FWlib\inc\stm32f10x_rcc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_usart.h)(0x5901E984)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
 I (..\USER\inc\delay.h)(0x5901E984)
-F (..\USER\src\main.c)(0x5927DD9A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\USER\src\main.c)(0x593F63BF)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (..\USER\inc\sys.h)(0x5901E984)
 I (..\CMSIS\stm32f10x.h)(0x5901E984)
@@ -89,6 +105,8 @@ I (..\FWlib\inc\stm32f10x_gpio.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_rcc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_usart.h)(0x5901E984)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
+I (..\USER\inc\usart.h)(0x593E337A)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (..\USER\inc\gpiox.h)(0x5901E984)
 I (..\USER\inc\TIMINIT.H)(0x5901E984)
 I (..\USER\inc\delay.h)(0x5901E984)
@@ -102,8 +120,6 @@ I (..\USER\inc\stm32f107.h)(0x591C015D)
 I (..\FWlib\inc\stm32f10x_adc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_exti.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_spi.h)(0x5901E984)
-I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (..\USER\inc\usart.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip\init.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/opt.h)(0x5901E984)
 I (..\lwip-1.3.1\port\lwipopts.h)(0x5901E984)
@@ -122,7 +138,7 @@ I (..\lwip-1.3.1\src\include\ipv4\lwip/ip_addr.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\ipv4\lwip/inet.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/netif.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\ipv4\lwip/icmp.h)(0x5901E984)
-I (..\USER\inc\TCPClient.h)(0x59111CED)
+I (..\USER\inc\TCPClient.h)(0x593E464B)
 I (..\lwip-1.3.1\src\include\lwip/stats.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/memp.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/memp_std.h)(0x5901E984)
@@ -170,7 +186,7 @@ I (..\FWlib\inc\stm32f10x_gpio.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_rcc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_usart.h)(0x5901E984)
 I (D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h)(0x52F9EB20)
-F (..\USER\src\netconf.c)(0x5927E18E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\netconf.o --omf_browse .\objects\netconf.crf --depend .\objects\netconf.d)
+F (..\USER\src\netconf.c)(0x593E3C73)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\netconf.o --omf_browse .\objects\netconf.crf --depend .\objects\netconf.d)
 I (..\lwip-1.3.1\src\include\lwip/memp.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/opt.h)(0x5901E984)
 I (..\lwip-1.3.1\port\lwipopts.h)(0x5901E984)
@@ -213,7 +229,7 @@ I (..\FWlib\inc\stm32f10x_exti.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_spi.h)(0x5901E984)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (..\USER\inc\netconf.h)(0x5901E984)
-F (..\USER\src\stm32f107.c)(0x591C26BD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\stm32f107.o --omf_browse .\objects\stm32f107.crf --depend .\objects\stm32f107.d)
+F (..\USER\src\stm32f107.c)(0x593E36F4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\stm32f107.o --omf_browse .\objects\stm32f107.crf --depend .\objects\stm32f107.d)
 I (..\ETH\inc\stm32_eth.h)(0x5901E984)
 I (..\CMSIS\stm32f10x.h)(0x5901E984)
 I (..\CMSIS\core_cm3.h)(0x5901E984)
@@ -234,10 +250,10 @@ I (..\FWlib\inc\stm32f10x_spi.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_iwdg.h)(0x591BF9FF)
 I (..\USER\inc\main.h)(0x5901E984)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
-I (..\USER\inc\usart.h)(0x5901E984)
+I (..\USER\inc\usart.h)(0x593E337A)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
-F (..\USER\src\TCPClient.c)(0x5927E177)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\tcpclient.o --omf_browse .\objects\tcpclient.crf --depend .\objects\tcpclient.d)
-I (..\USER\inc\TCPClient.h)(0x59111CED)
+F (..\USER\src\TCPClient.c)(0x593F6220)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\tcpclient.o --omf_browse .\objects\tcpclient.crf --depend .\objects\tcpclient.d)
+I (..\USER\inc\TCPClient.h)(0x593E464B)
 I (..\lwip-1.3.1\src\include\lwip/debug.h)(0x5901E984)
 I (..\lwip-1.3.1\src\include\lwip/arch.h)(0x5901E984)
 I (..\lwip-1.3.1\port\arch/cc.h)(0x5901E984)
@@ -279,8 +295,9 @@ I (..\FWlib\inc\stm32f10x_adc.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_exti.h)(0x5901E984)
 I (..\FWlib\inc\stm32f10x_spi.h)(0x5901E984)
 I (..\secure\secure.h)(0x5901E984)
-F (..\USER\src\usart.c)(0x5901E984)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
-I (..\USER\inc\usart.h)(0x5901E984)
+I (..\FWlib\inc\stm32f10x_iwdg.h)(0x591BF9FF)
+F (..\USER\src\usart.c)(0x593E33AE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\USER\inc -I ..\secure -I ..\CMSIS -I ..\ETH\inc -I ..\lwip-1.3.1\port -I ..\lwip-1.3.1\src\include -I ..\lwip-1.3.1\src\include\ipv4 -I ..\lwip-1.3.1\src\include\lwip -I ..\FWlib\inc-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE-I D:\Documents\GitHub\Stm32f107-Lwip\Project\RTE\Device\STM32F107RC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc-D__UVISION_VERSION="518" -D_RTE_ -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -DSTM32F10X_CL-o .\objects\usart.o --omf_browse .\objects\usart.crf --depend .\objects\usart.d)
+I (..\USER\inc\usart.h)(0x593E337A)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DEA3A)
 I (..\CMSIS\stm32f10x.h)(0x5901E984)
 I (..\CMSIS\core_cm3.h)(0x5901E984)

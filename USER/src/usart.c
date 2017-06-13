@@ -71,26 +71,26 @@ void USART_GPIO_Configuration(void)
   * @param  None
   * @retval None
   */
-//void USART_Configuration(void)
-//{
-//	USART_InitTypeDef USART_InitStruct;
+void USART_Configuration(void)
+{
+	USART_InitTypeDef USART_InitStruct;
 //	NVIC_InitTypeDef 	NVIC_InitStructure;
-//	USART_RCC_Configuration();
-//	USART_GPIO_Configuration();
+	USART_RCC_Configuration();
+	USART_GPIO_Configuration();
 
-//	USART_InitStruct.USART_BaudRate = 115200;
-//	USART_InitStruct.USART_StopBits = USART_StopBits_1;
-//	USART_InitStruct.USART_WordLength = USART_WordLength_8b;
-//	USART_InitStruct.USART_Parity = USART_Parity_No;
-//	USART_InitStruct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-//	USART_InitStruct.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-//	USART_Init(USART1, &USART_InitStruct);
-//	
+	USART_InitStruct.USART_BaudRate = 115200;
+	USART_InitStruct.USART_StopBits = USART_StopBits_1;
+	USART_InitStruct.USART_WordLength = USART_WordLength_8b;
+	USART_InitStruct.USART_Parity = USART_Parity_No;
+	USART_InitStruct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStruct.USART_Mode = USART_Mode_Tx;
+	USART_Init(USART1, &USART_InitStruct);
+	
 //	USART_ITConfig(USART1,USART_IT_TC,DISABLE);  
 //	USART_ITConfig(USART1,USART_IT_RXNE,DISABLE);  
 //	USART_ITConfig(USART1,USART_IT_IDLE,ENABLE);    
 
-//	//配置UART1中断    
+	//配置UART1中断    
 //	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_3);  
 //	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;               //通道设置为串口1中断    
 //	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;       //中断占先等级0    
@@ -98,12 +98,12 @@ void USART_GPIO_Configuration(void)
 //	NVIC_InitStructure.NVIC_IRQ-ChannelCmd = ENABLE;                 //打开中断    
 //	NVIC_Init(&NVIC_InitStructure);     
 //	 
-//	//采用DMA方式发送  采用DMA方式接收  
+	//采用DMA方式发送  采用DMA方式接收  
 //	USART_DMACmd(USART1,USART_DMAReq_Tx|USART_DMAReq_Rx,ENABLE);  
-//	
-////	USART_ITConfig(USART1,USART_IT_RXNE,ENABLE);//使能接收中断
-//	USART_Cmd(USART1, ENABLE);//使能串口1
-//}
+	
+//	USART_ITConfig(USART1,USART_IT_RXNE,ENABLE);//使能接收中断
+	USART_Cmd(USART1, ENABLE);//使能串口1
+}
 
 
 

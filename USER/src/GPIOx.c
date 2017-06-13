@@ -55,7 +55,6 @@ void	GPIOB_Config(void)
 
 void	GPIO_Config(void)
 {
-//	GPIOA_Config();
 	GPIOB_Config();
 }
 

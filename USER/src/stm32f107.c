@@ -282,8 +282,8 @@ void NVIC_Configuration(void)
 void Iwdg_Init(void)
 {
 	IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);         //写入看门狗的地址
-	IWDG_SetPrescaler(IWDG_Prescaler_64);									//设置预分频器为64分频
-	IWDG_SetReload(0xAAAA);																//写入看门狗重装载值
+	IWDG_SetPrescaler(IWDG_Prescaler_256);									//设置预分频器为64分频
+	IWDG_SetReload(3750);																//写入看门狗重装载值
 	IWDG_ReloadCounter();																	//装载计数器
 	IWDG_Enable();																				//启动看门狗
 }

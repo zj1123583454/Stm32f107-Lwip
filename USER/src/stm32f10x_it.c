@@ -123,15 +123,15 @@ void SysTick_Handler(void)
 {
   /* Update the LocalTime by adding SYSTEMTICK_PERIOD_MS each SysTick interrupt */
   Time_Update();
-	ConnectTime+=1;
-	if(IT_Begin==BEGIN && ConnectTime>=100)                              
-	{
-			if(TCP_ClientFlag!=TCP_Connected)
-			{
-					Tcp_write=tcp_echoclient_connect();
-			}
-			ConnectTime=0;
-	}		
+//	ConnectTime+=1;
+//	if(IT_Begin==BEGIN && ConnectTime>=100)                              
+//	{
+//			if(TCP_ClientFlag!=TCP_Connected)
+//			{
+//					Tcp_write=tcp_echoclient_connect();
+//			}
+//			ConnectTime=0;
+//	}		
 } 
 void ETH_IRQHandler(void)
 {

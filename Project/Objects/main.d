@@ -14,6 +14,8 @@
 .\objects\main.o: ..\FWlib\inc\stm32f10x_rcc.h
 .\objects\main.o: ..\FWlib\inc\stm32f10x_usart.h
 .\objects\main.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\StdPeriph_Driver\inc\misc.h
+.\objects\main.o: ..\USER\inc\usart.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: ..\USER\inc\gpiox.h
 .\objects\main.o: ..\USER\inc\TIMINIT.H
 .\objects\main.o: ..\USER\inc\delay.h
@@ -27,8 +29,6 @@
 .\objects\main.o: ..\FWlib\inc\stm32f10x_adc.h
 .\objects\main.o: ..\FWlib\inc\stm32f10x_exti.h
 .\objects\main.o: ..\FWlib\inc\stm32f10x_spi.h
-.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: ..\USER\inc\usart.h
 .\objects\main.o: ..\lwip-1.3.1\src\include\lwip\init.h
 .\objects\main.o: ..\lwip-1.3.1\src\include\lwip/opt.h
 .\objects\main.o: ..\lwip-1.3.1\port\lwipopts.h

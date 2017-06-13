@@ -23,7 +23,6 @@ enum Lunry_Tcp_States
 	TCP_Closed=0,
 	TCP_Connected,
 };
-
 struct echoclient
 {
   enum echoclient_states state; /* connection status */

@@ -1,5 +1,6 @@
 #include <string.h>
 #include "sys.h"
+#include "usart.h"
 #include "gpiox.h"
 #include "TIMINIT.H"
 #include "delay.h"
@@ -35,13 +36,13 @@ int main(void)
 	System_Setup();       
 	LwIP_Init();													 			//LWIP 初始化  配置IP等
 	GPIO_Config();															//配置IIC
-	init_i2c();                              
+	USART_Configuration();
+	init_i2c();
 	Tcp_write=tcp_echoclient_connect();					//创建TCP通道 并且连接到服务器
 	IT_Begin=BEGIN;															//所有初始化就绪标志 此标志使能 定时检测TCP是否断开
-	//Iwdg_Init();																//初始化 独立看门狗	
+	Iwdg_Init();																//初始化 独立看门狗
 	while(1)
-	{	
-		
+	{
 					if(TX_FRAME)																				 //如果安全模块读取使能
 					{		
 						leng = read_sec(buf);										//读取安全模块返回的信息 存到buf 并且返回数据长度	
@@ -50,7 +51,7 @@ int main(void)
 						tcp_output(Tcp_write);			
 					}				
 					tcp_recv(Tcp_write,tcp_echoclient_recv);               //接收Socket的数据
-					//IWDG_ReloadCounter();																		//喂狗
+					
 					if(RX_Flag)
 					{
 						leng=DataUnPackage(buf,TCP_ReciveBuffer);               

@@ -24,6 +24,7 @@
 /* Exported Functions --------------------------------------------------------*/
 void USART_RCC_Configuration(void);
 void USART_GPIO_Configuration(void);
+void USART_Configuration(void);
 //void USART_Configuration(void);
 
 #endif /*_usart_H*/

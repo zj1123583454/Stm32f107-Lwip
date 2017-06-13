@@ -1,13 +1,13 @@
-//#include "stm32f10x_usart.h"
-//#include "stm32f10x_dma.h"
-//#include "misc.h"
-//#include "uasrt.h"
-//#include "include.h"
+#include "stm32f10x_usart.h"
+#include "stm32f10x_dma.h"
+#include "misc.h"
+#include "uasrt.h"
+#include "include.h"
 
-//#include <stdio.h>
-//#include "stm32f10x_gpio.h"
-//#include "stm32f10x_rcc.h"
-//#include "usart.h"
+#include <stdio.h>
+#include "stm32f10x_gpio.h"
+#include "stm32f10x_rcc.h"
+#include "usart.h"
 //#define	LENG	10
 //#define	UASRTLENG	15
 
@@ -218,28 +218,28 @@
 //    DMA_Cmd(DMA1_Channel6,ENABLE);
 //}
 
-//void UASRT1_Config(void)
-//{	
-//	USART_InitTypeDef USART_InitStructure;
+void UASRT1_Config(void)
+{	
+	USART_InitTypeDef USART_InitStructure;
 //	NVIC_InitTypeDef 	NVIC_InitStructure;
 
-//	RCC->APB2ENR|=1<<2;   	//使能PORTA口时钟  
-//	RCC->APB2ENR|=1<<14;  	//使能串口时钟
-////	AFIO->MAPR	|=1<<2;		//串口I/O映射到PB6 PB7
+	RCC->APB2ENR|=1<<2;   	//使能PORTA口时钟  
+	RCC->APB2ENR|=1<<14;  	//使能串口时钟
+//	AFIO->MAPR	|=1<<2;		//串口I/O映射到PB6 PB7
 
 //	GPIOA->CRH&=0XFFFFF00F; 
 //	GPIOA->CRH|=0X000008B0;//IO状态设置
 
 //	//初始化参数    
-//	USART_InitStructure.USART_BaudRate = 115200;
-//	USART_InitStructure.USART_WordLength = USART_WordLength_8b;    
-//	USART_InitStructure.USART_StopBits = USART_StopBits_1;    
-//	USART_InitStructure.USART_Parity = USART_Parity_No;    
-//	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;    
-//	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;      
+	USART_InitStructure.USART_BaudRate = 115200;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;    
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;    
+	USART_InitStructure.USART_Parity = USART_Parity_No;    
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;    
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;      
 
-//	//初始化串口   
-//	USART_Init(USART1,&USART_InitStructure);    
+	//初始化串口   
+	USART_Init(USART1,&USART_InitStructure);    
 //	//TXE发送中断,TC传输完成中断,RXNE接收中断,PE奇偶错误中断,可以是多个     
 //	//USART_ITConfig(USART1,USART_IT_RXNE,ENABLE);  
 
@@ -260,40 +260,40 @@
 //	USART_DMACmd(USART1,USART_DMAReq_Tx|USART_DMAReq_Rx,ENABLE);  
 //	
 //	//启动串口    
-//	USART_Cmd(USART1, ENABLE);  
-//}
+	USART_Cmd(USART1, ENABLE);  
+}
 
-////void UASRT2_Config(void)
-////{	
-////	GPIO_InitTypeDef GPIO_InitStructure;
-////	USART_InitTypeDef USART_InitStructure;
-////	NVIC_InitTypeDef NVIC_InitStructure; 
-////	/* Configure the NVIC Preemption Priority Bits */  
-////	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+//void UASRT2_Config(void)
+//{	
+//	GPIO_InitTypeDef GPIO_InitStructure;
+//	USART_InitTypeDef USART_InitStructure;
+//	NVIC_InitTypeDef NVIC_InitStructure; 
+//	/* Configure the NVIC Preemption Priority Bits */  
+//	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
 
-////	/* config USART2 clock */
-////	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-////	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+//	/* config USART2 clock */
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+//	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
 
-////	/* USART2 GPIO config */
-////   /* Configure USART2 Tx (PA.02) as alternate function push-pull */
-////  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
-////  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-////  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-////  GPIO_Init(GPIOA, &GPIO_InitStructure);
-////	    
-////  /* Configure USART2 Rx (PA.03) as input floating */
-////  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
-////  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-////  GPIO_Init(GPIOA, &GPIO_InitStructure);
-////	  
-////	/* USART2 mode config */
-////	USART_InitStructure.USART_BaudRate = 115200;
-////	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-////	USART_InitStructure.USART_StopBits = USART_StopBits_1;
-////	USART_InitStructure.USART_Parity = USART_Parity_No ;
-////	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-////	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+//	/* USART2 GPIO config */
+//   /* Configure USART2 Tx (PA.02) as alternate function push-pull */
+//  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+//  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+//  GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	    
+//  /* Configure USART2 Rx (PA.03) as input floating */
+//  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
+//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+//  GPIO_Init(GPIOA, &GPIO_InitStructure);
+//	  
+//	/* USART2 mode config */
+//	USART_InitStructure.USART_BaudRate = 115200;
+//	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+//	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+//	USART_InitStructure.USART_Parity = USART_Parity_No ;
+//	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+//	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 
 ////	USART_Init(USART2, &USART_InitStructure);
 //////	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);		//  串口2接收中断
@@ -390,13 +390,13 @@
 ////	while(Uasrt2_tx_falg);
 ////}
 
-////void USART_Iint(void)
-////{
+//void USART_Iint(void)
+//{
 ////	DMA1_Channel4_Configuration();
 ////	DMA1_Channel5_Configuration();
 ////	DMA1_Channel6_Configuration();
 ////	DMA1_Channel7_Configuration();
 ////	USART_Configuration();
-////	//UASRT1_Config();__NOP();
-////	//UASRT2_Config();__NOP();
-////}
+//	//UASRT1_Config();__NOP();
+//	//UASRT2_Config();__NOP();
+//}

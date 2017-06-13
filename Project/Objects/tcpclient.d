@@ -42,3 +42,4 @@
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_exti.h
 .\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_spi.h
 .\objects\tcpclient.o: ..\secure\secure.h
+.\objects\tcpclient.o: ..\FWlib\inc\stm32f10x_iwdg.h
